@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BreweryCard from '../../components/BreweryCard';
 import { fetchBreweries } from '../../services/breweries';
+import './Home.css';
 
 export default function Home() {
   const [breweries, setBreweries] = useState({});
@@ -14,6 +15,7 @@ export default function Home() {
     };
     getBreweries();
   }, [loading]);
+  if (loading) return <h1>loading...</h1>;
   return (
     <div>
       <BreweryCard breweries={breweries} />
