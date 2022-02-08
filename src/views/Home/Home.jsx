@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Controls from '../../components/Controls/Controls';
 import PokeList from '../../components/PokeList/PokeList';
+import DarkModeToggle from '../../hooks/Hooks';
 import { getPokemon } from '../../services/pokemon';
 import './Home.css';
 
@@ -28,6 +29,7 @@ export default function Home() {
   return (
     <div>
       <h1>Pokemon List</h1>
+      <DarkModeToggle />
       <Controls
         query={query}
         setQuery={setQuery}
