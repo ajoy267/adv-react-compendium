@@ -9,7 +9,9 @@ test('pokemon should search by query', async () => {
   const pokemonName = 'butterfree';
   userEvent.type(searchInput, pokemonName);
 
-  const btn = screen.getByRole('button');
+  const btn = screen.getByRole('button', {
+    name: /search/i,
+  });
   userEvent.click(btn);
 
   const pokemon = await screen.findAllByText(pokemonName, { exact: false });

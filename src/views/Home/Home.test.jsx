@@ -14,7 +14,9 @@ test('should render Controls and Pokemon List', async () => {
 
   const heading = await screen.findByRole('heading', { name: /pokemon/i });
   const searchInput = screen.getByRole('textbox');
-  const searchBtn = screen.getByRole('button');
+  const searchBtn = screen.getByRole('button', {
+    name: /search/i,
+  });
   const pokemon = screen.getByText(/butterfree/i);
 
   expect(heading).toBeInTheDocument();
